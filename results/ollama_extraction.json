@@ -1,0 +1,83 @@
+{
+  "model": "llama3.2:1b (Ollama, local, temperature 0)",
+  "notes": [
+    {
+      "id": "SYN-009",
+      "fields": {
+        "medications": 1.0,
+        "follow_up_days": 0.0,
+        "follow_up_clinic": 1.0,
+        "red_flags": 1.0,
+        "contact": 1.0
+      },
+      "pred": {
+        "medications": [
+          {
+            "name": "lisinopril",
+            "dose": "10 mg",
+            "frequency": "daily"
+          },
+          {
+            "name": "furosemide",
+            "dose": "40 mg",
+            "frequency": "daily"
+          }
+        ],
+        "follow_up_days": null,
+        "follow_up_clinic": "cardiology clinic",
+        "red_flags": [
+          "worsening shortness of breath",
+          "chest pain"
+        ],
+        "contact": "555-0109"
+      },
+      "gold": {
+        "contact": "555-0109",
+        "follow_up_clinic": "cardiology clinic",
+        "follow_up_days": 7,
+        "medications": [
+          {
+            "dose": "10 mg",
+            "frequency": "daily",
+            "name": "lisinopril"
+          },
+          {
+            "dose": "40 mg",
+            "frequency": "daily",
+            "name": "furosemide"
+          }
+        ],
+        "red_flags": [
+          "worsening shortness of breath",
+          "chest pain"
+        ]
+      }
+    },
+    {
+      "id": "SYN-011",
+      "fields": {
+        "medications": 1.0,
+        "follow_up_days": 1.0,
+        "follow_up_clinic": 1.0,
+        "red_flags": 1.0,
+        "contact": 1.0
+      },
+      "pred": {
+        "medications": [],
+        "follow_up_days": null,
+        "follow_up_clinic": null,
+        "red_flags": [],
+        "contact": null
+      },
+      "gold": {
+        "contact": null,
+        "follow_up_clinic": null,
+        "follow_up_days": null,
+        "medications": [],
+        "red_flags": []
+      }
+    }
+  ],
+  "mean_field_f1": 0.9,
+  "note": "SYN-011 was re-run after fixing the none-medication safety filter; the pre-fix run returned placeholder none medications and is documented in the README."
+}
